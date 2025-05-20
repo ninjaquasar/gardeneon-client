@@ -11,9 +11,19 @@ const LoginCard = () => {
 		formState: { errors },
 		reset,
 	} = useForm();
-	const { loginUser } = useContext(AuthContext);
+	const { googleLogin, passwordLogin } = useContext(AuthContext);
 	const onSubmit = (data) => {
-		loginUser(data)
+		passwordLogin(data)
+			.then((authInfo) => {
+				alert("Logged in successfully");
+				reset();
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	};
+	const handleGoogleLogin = () => {
+		googleLogin()
 			.then((authInfo) => {
 				alert("Logged in successfully");
 				reset();
@@ -75,6 +85,7 @@ const LoginCard = () => {
 			<button
 				type="button"
 				className="w-full py-2 flex items-center justify-center gap-x-3 border border-primary/75 text-stone-700 hover:bg-primary/10 text-lg font-medium rounded-full transition-colors duration-100 cursor-pointer"
+				onClick={handleGoogleLogin}
 			>
 				<img
 					src="https://cdn.brandfetch.io/id6O2oGzv-/theme/dark/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B"

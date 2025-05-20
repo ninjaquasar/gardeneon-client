@@ -1,7 +1,20 @@
 import { UserPlusIcon } from "lucide-react";
+import { useContext } from "react";
 import { Link } from "react-router";
+import AuthContext from "../../contexts/AuthContext";
 
 const SignUpCard = () => {
+	const { googleLogin } = useContext(AuthContext);
+	const handleGoogleLogin = () => {
+		googleLogin()
+			.then((authInfo) => {
+				alert("Logged in successfully");
+				reset();
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	};
 	return (
 		<div className="max-w-md mx-auto p-8 rounded-3xl shadow-lg shadow-dark/20">
 			<h2 className="flex items-center justify-center gap-x-4 text-4xl font-bold uppercase text-primary">
@@ -62,6 +75,7 @@ const SignUpCard = () => {
 			<button
 				type="button"
 				className="w-full py-2 flex items-center justify-center gap-x-3 border border-primary/75 text-stone-700 hover:bg-primary/10 text-lg font-medium rounded-full transition-colors duration-100 cursor-pointer"
+				onClick={handleGoogleLogin}
 			>
 				<img
 					src="https://cdn.brandfetch.io/id6O2oGzv-/theme/dark/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B"
