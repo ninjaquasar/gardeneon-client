@@ -2,7 +2,7 @@ import LoginCard from "../components/cards/LoginCard";
 
 const LoginPage = () => {
 	return (
-		<main className="py-16">
+		<main className="py-8">
 			<LoginCard />
 		</main>
 	);

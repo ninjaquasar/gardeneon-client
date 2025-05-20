@@ -1,4 +1,5 @@
 import { LogInIcon } from "lucide-react";
+import { Link } from "react-router";
 
 const LoginCard = () => {
 	return (
@@ -16,6 +17,7 @@ const LoginCard = () => {
 					<input
 						type="email"
 						className="p-2 bg-stone-50 border border-dark/20 rounded-lg focus:outline-none focus:border-primary caret-primary"
+						placeholder="Account Email"
 					/>
 				</label>
 				<label className="flex flex-col gap-y-1 text-lg">
@@ -23,6 +25,7 @@ const LoginCard = () => {
 					<input
 						type="password"
 						className="p-2 bg-stone-50 border border-dark/20 rounded-lg focus:outline-none focus:border-primary caret-primary"
+						placeholder="Account Password"
 					/>
 				</label>
 				<div className="text-center">
@@ -51,6 +54,15 @@ const LoginCard = () => {
 				/>
 				Login with Google
 			</button>
+			<p className="text-center text-slate-600 font-semibold mt-6">
+				First time in the garden?{" "}
+				<Link
+					to="/signup"
+					className="text-primary hover:underline underline-offset-2"
+				>
+					Sign Up
+				</Link>
+			</p>
 		</div>
 	);
 };
