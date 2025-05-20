@@ -1,6 +1,6 @@
 import Hero from "../sections/home/Hero";
 
-const Home = () => {
+const HomePage = () => {
 	return (
 		<main>
 			<Hero />
@@ -8,4 +8,4 @@ const Home = () => {
 	);
 };
 
-export default Home;
+export default HomePage;

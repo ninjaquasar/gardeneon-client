@@ -68,7 +68,7 @@ const Navbar = () => {
 				id="nav-buttons"
 				className="flex items-center gap-x-4"
 			>
-				<NavLink to="/signup">
+				<NavLink to="/login">
 					<button
 						type="button"
 						className="px-5 py-2 bg-primary text-light hover:bg-primary/90 text-lg font-bold rounded-lg cursor-pointer"
@@ -76,7 +76,7 @@ const Navbar = () => {
 						Login
 					</button>
 				</NavLink>
-				<NavLink to="/login">
+				<NavLink to="/signup">
 					<button
 						type="button"
 						className="px-5 py-2 bg-primary text-light hover:bg-primary/90 text-lg font-bold rounded-lg cursor-pointer"
