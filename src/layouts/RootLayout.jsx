@@ -1,11 +1,14 @@
 import { Fragment } from "react";
-import Logo from "../assets/logo.png";
 import Navbar from "./Navbar";
+import { Outlet } from "react-router";
 
 const RootLayout = () => {
 	return (
 		<Fragment>
-			<Navbar />
+			<header>
+				<Navbar />
+			</header>
+			<Outlet />
 		</Fragment>
 	);
 };
