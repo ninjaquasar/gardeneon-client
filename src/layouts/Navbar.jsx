@@ -5,21 +5,21 @@ const Navbar = () => {
 	return (
 		<nav className="px-32 py-4 flex items-center justify-between border-b border-b-stone-100">
 			{/* Left-aligned Logo */}
-			<NavLink to="/">
+			<NavLink>
 				<div
 					id="nav-logo"
-					className="flex items-center gap-x-3 select-none"
+					className="flex items-center gap-x-3"
 				>
 					<img
 						src={Logo}
 						alt="Logo"
 						className="size-10"
 					/>
-					<h4 className="text-3xl font-extrabold">Gardeneon</h4>
+					<h3 className="text-3xl font-extrabold">Gardeneon</h3>
 				</div>
 			</NavLink>
 			{/* Centered-aligned Links */}
-			<div id="nav-links">
+			<div>
 				<ul className="flex items-center gap-x-1 font-medium">
 					<li>
 						<NavLink
@@ -64,10 +64,7 @@ const Navbar = () => {
 				</ul>
 			</div>
 			{/* Right-aligned Buttons */}
-			<div
-				id="nav-buttons"
-				className="flex items-center gap-x-4"
-			>
+			<div className="flex items-center gap-x-4">
 				<NavLink to="/login">
 					<button
 						type="button"
