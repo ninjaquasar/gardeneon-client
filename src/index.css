@@ -1,0 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
+@import "tailwindcss";
+@import "../node_modules/preline/variants.css";
+
+@theme {
+	--font-mulish: "Mulish", Tahoma, Helvetica, sans-serif;
+	--color-light: #fafffc;
+	--color-dark: #181b18;
+	--color-primary: #56d271;
+}

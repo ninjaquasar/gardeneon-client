@@ -1,0 +1,4 @@
+ANALYSIS.md
+node_modules
+dist
+*.local
