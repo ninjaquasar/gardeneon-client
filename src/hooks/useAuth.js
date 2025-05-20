@@ -1,9 +1,12 @@
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../config/firebase.config";
+
 const useAuth = () => {
-	const userInfo = {
-		email: "developer@gardeneon.com",
-		password: "Dev#Gardeneon",
+	// Login user
+	const loginUser = ({ email, password }) => {
+		return signInWithEmailAndPassword(auth, email, password);
 	};
-	return { userInfo };
+	return { loginUser };
 };
 
 export default useAuth;
