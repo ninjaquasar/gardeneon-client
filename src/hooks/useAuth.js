@@ -1,4 +1,9 @@
-import { GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import {
+	createUserWithEmailAndPassword,
+	GoogleAuthProvider,
+	signInWithEmailAndPassword,
+	signInWithPopup,
+} from "firebase/auth";
 import { auth } from "../../config/firebase.config";
 
 const useAuth = () => {
@@ -11,7 +16,11 @@ const useAuth = () => {
 	const passwordLogin = ({ email, password }) => {
 		return signInWithEmailAndPassword(auth, email, password);
 	};
-	return { googleLogin, passwordLogin };
+	// Sign up user
+	const signUp = ({ email, password }) => {
+		return createUserWithEmailAndPassword(auth, email, password);
+	};
+	return { googleLogin, passwordLogin, signUp };
 };
 
 export default useAuth;

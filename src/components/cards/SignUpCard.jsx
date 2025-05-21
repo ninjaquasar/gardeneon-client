@@ -2,9 +2,38 @@ import { UserPlusIcon } from "lucide-react";
 import { useContext } from "react";
 import { Link } from "react-router";
 import AuthContext from "../../contexts/AuthContext";
+import { useForm } from "react-hook-form";
+import { updateProfile } from "firebase/auth";
+import { auth } from "../../../config/firebase.config";
 
 const SignUpCard = () => {
-	const { googleLogin } = useContext(AuthContext);
+	const {
+		register,
+		handleSubmit,
+		formState: { errors },
+		reset,
+	} = useForm();
+	const { signUp, googleLogin } = useContext(AuthContext);
+	const onSubmit = (data) => {
+		signUp({ email: data.email, password: data.password })
+			.then((authInfo) => {
+				const userProfileInfo = {
+					displayName: data.name,
+					photoURL: data.photoURL,
+				};
+				updateProfile(auth.currentUser, userProfileInfo)
+					.then((result) => {
+						console.log("User Profile created");
+					})
+					.catch((error) => {
+						console.log(error);
+					});
+				reset();
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	};
 	const handleGoogleLogin = () => {
 		googleLogin()
 			.then((authInfo) => {
@@ -24,13 +53,19 @@ const SignUpCard = () => {
 				/>
 				Sign Up
 			</h2>
-			<form className="my-8 space-y-4">
+			<form
+				className="my-8 space-y-4"
+				onSubmit={handleSubmit(onSubmit)}
+			>
 				<label className="flex flex-col gap-y-1 text-lg">
 					<span className="font-medium">Name</span>
 					<input
 						type="text"
 						className="p-2 bg-stone-50 border border-dark/20 rounded-lg focus:outline-none focus:border-primary caret-primary"
 						placeholder="Your Full Name"
+						{...register("name", {
+							required: true,
+						})}
 					/>
 				</label>
 				<label className="flex flex-col gap-y-1 text-lg">
@@ -39,6 +74,9 @@ const SignUpCard = () => {
 						type="url"
 						className="p-2 bg-stone-50 border border-dark/20 rounded-lg focus:outline-none focus:border-primary caret-primary"
 						placeholder="Profile Picture URL"
+						{...register("photoURL", {
+							required: true,
+						})}
 					/>
 				</label>
 				<label className="flex flex-col gap-y-1 text-lg">
@@ -47,6 +85,11 @@ const SignUpCard = () => {
 						type="email"
 						className="p-2 bg-stone-50 border border-dark/20 rounded-lg focus:outline-none focus:border-primary caret-primary"
 						placeholder="Email Address"
+						{...register("email", {
+							required: true,
+							validate: (value) =>
+								value.includes(".") ? true : "Email must include a . (dot)",
+						})}
 					/>
 				</label>
 				<label className="flex flex-col gap-y-1 text-lg">
@@ -55,6 +98,22 @@ const SignUpCard = () => {
 						type="password"
 						className="p-2 bg-stone-50 border border-dark/20 rounded-lg focus:outline-none focus:border-primary caret-primary"
 						placeholder="Strong Password"
+						{...register("password", {
+							required: true,
+							minLength: {
+								value: 8,
+								message: "Password must be at least 8 characters long",
+							},
+							validate: (value) => {
+								if (!/(?=.*[a-z])/.test(value))
+									return "Password must include at least 1 lowercase letter";
+								else if (!/(?=.*[A-Z])/.test(value))
+									return "Password must include at least 1 uppercase letter";
+								else if (!/(?=.*[^a-zA-Z0-9])/.test(value))
+									return "Password must include at least 1 symbol";
+								else return true;
+							},
+						})}
 					/>
 				</label>
 				<div className="text-center">

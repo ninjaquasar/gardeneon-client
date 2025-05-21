@@ -53,8 +53,6 @@ const LoginCard = () => {
 						placeholder="Account Email"
 						{...register("email", {
 							required: true,
-							validate: (value) =>
-								value.includes(".") ? true : "The email is invalid",
 						})}
 					/>
 				</label>
