@@ -5,6 +5,7 @@ import AuthContext from "../../contexts/AuthContext";
 import { useForm } from "react-hook-form";
 import { updateProfile } from "firebase/auth";
 import { auth } from "../../../config/firebase.config";
+import { toast, Zoom } from "react-toastify";
 
 const SignUpCard = () => {
 	const {
@@ -16,19 +17,29 @@ const SignUpCard = () => {
 	const { signUp, googleLogin } = useContext(AuthContext);
 	const onSubmit = (data) => {
 		signUp({ email: data.email, password: data.password })
-			.then((authInfo) => {
+			.then(() => {
 				const userProfileInfo = {
 					displayName: data.name,
 					photoURL: data.photoURL,
 				};
 				updateProfile(auth.currentUser, userProfileInfo)
-					.then((result) => {
-						console.log("User Profile created");
+					.then(() => {
+						toast.success("Signed up successfully. Welcome to the community!", {
+							theme: "light",
+							position: "top-left",
+							autoClose: 4000,
+							closeOnClick: true,
+							hideProgressBar: false,
+							draggable: true,
+							pauseOnHover: false,
+							pauseOnFocusLoss: false,
+							transition: Zoom,
+						});
+						reset();
 					})
 					.catch((error) => {
 						console.log(error);
 					});
-				reset();
 			})
 			.catch((error) => {
 				console.log(error);
@@ -36,14 +47,48 @@ const SignUpCard = () => {
 	};
 	const handleGoogleLogin = () => {
 		googleLogin()
-			.then((authInfo) => {
-				alert("Logged in successfully");
+			.then(() => {
+				toast.success("Logged in successfully. Welcome back to the community!", {
+					theme: "light",
+					position: "top-left",
+					autoClose: 4000,
+					closeOnClick: true,
+					hideProgressBar: false,
+					draggable: true,
+					pauseOnHover: false,
+					pauseOnFocusLoss: false,
+					transition: Zoom,
+				});
 				reset();
 			})
 			.catch((error) => {
-				console.log(error);
+				toast.error(error.message, {
+					theme: "light",
+					position: "top-left",
+					autoClose: 3500,
+					closeOnClick: true,
+					hideProgressBar: true,
+					draggable: true,
+					pauseOnHover: false,
+					pauseOnFocusLoss: false,
+					transition: Zoom,
+				});
 			});
 	};
+	if (Object.values(errors).length) {
+		const errorMessage = Object.values(errors)[0].message;
+		toast.error(errorMessage, {
+			theme: "light",
+			position: "top-left",
+			autoClose: 3500,
+			closeOnClick: true,
+			hideProgressBar: true,
+			draggable: true,
+			pauseOnHover: false,
+			pauseOnFocusLoss: false,
+			transition: Zoom,
+		});
+	}
 	return (
 		<div className="max-w-md mx-auto p-8 rounded-3xl shadow-lg shadow-dark/20">
 			<h2 className="flex items-center justify-center gap-x-4 text-4xl font-bold uppercase text-primary">
@@ -64,7 +109,7 @@ const SignUpCard = () => {
 						className="p-2 bg-stone-50 border border-dark/20 rounded-lg focus:outline-none focus:border-primary caret-primary"
 						placeholder="Your Full Name"
 						{...register("name", {
-							required: true,
+							required: "Full Name is required",
 						})}
 					/>
 				</label>
@@ -75,7 +120,7 @@ const SignUpCard = () => {
 						className="p-2 bg-stone-50 border border-dark/20 rounded-lg focus:outline-none focus:border-primary caret-primary"
 						placeholder="Profile Picture URL"
 						{...register("photoURL", {
-							required: true,
+							required: "Profile Picture is required",
 						})}
 					/>
 				</label>
@@ -86,9 +131,7 @@ const SignUpCard = () => {
 						className="p-2 bg-stone-50 border border-dark/20 rounded-lg focus:outline-none focus:border-primary caret-primary"
 						placeholder="Email Address"
 						{...register("email", {
-							required: true,
-							validate: (value) =>
-								value.includes(".") ? true : "Email must include a . (dot)",
+							required: "Email is required",
 						})}
 					/>
 				</label>
@@ -99,7 +142,7 @@ const SignUpCard = () => {
 						className="p-2 bg-stone-50 border border-dark/20 rounded-lg focus:outline-none focus:border-primary caret-primary"
 						placeholder="Strong Password"
 						{...register("password", {
-							required: true,
+							required: "Password is required",
 							minLength: {
 								value: 8,
 								message: "Password must be at least 8 characters long",
