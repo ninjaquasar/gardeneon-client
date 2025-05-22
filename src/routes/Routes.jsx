@@ -3,6 +3,7 @@ import RootLayout from "../layouts/RootLayout";
 import LoginPage from "../pages/LoginPage";
 import HomePage from "../pages/HomePage";
 import SignUpPage from "../pages/SignUpPage";
+import ShareTipPage from "../pages/ShareTipPage";
 
 const router = createBrowserRouter([
 	{
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
 			{
 				path: "/signup",
 				Component: SignUpPage,
+			},
+			{
+				path: "/share-tip",
+				Component: ShareTipPage,
 			},
 		],
 	},
