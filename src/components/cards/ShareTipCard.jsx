@@ -101,6 +101,7 @@ const ShareTipCard = () => {
 						<option>Plant Care</option>
 						<option>Urban Gardening</option>
 						<option>Indoor Gardening</option>
+						<option>Vertical Gardening</option>
 						<option>Seasonal Gardening</option>
 						<option>Flower Gardening</option>
 						<option>Composting</option>
