@@ -21,6 +21,7 @@ const ExploreGardeners = () => {
 					<GardenerCard
 						key={gardener._id}
 						data={gardener}
+						showStatus={true}
 					/>
 				))}
 			</div>
