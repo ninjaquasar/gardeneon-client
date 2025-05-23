@@ -26,7 +26,7 @@ const TopTipCard = ({ data }) => {
 				<span title="Read More">...</span>
 			</p>
 			<div className="text-center">
-				<Link to={`/tip-${_id}`}>
+				<Link to={`/tip/${_id}`}>
 					<button
 						type="button"
 						className="w-40 py-3 bg-primary text-light hover:bg-primary/90 text-xl font-bold rounded-xl cursor-pointer"

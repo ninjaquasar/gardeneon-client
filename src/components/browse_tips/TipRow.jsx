@@ -13,7 +13,7 @@ const TipRow = ({ data }) => {
 			</div>
 			<p className="col-span-2">{title}</p>
 			<p>{category}</p>
-			<Link to={`/tip-${_id}`}>
+			<Link to={`/tip/${_id}`}>
 				<button
 					type="button"
 					className="px-4 py-2 bg-primary text-light hover:bg-primary/90 font-medium rounded-lg cursor-pointer"
