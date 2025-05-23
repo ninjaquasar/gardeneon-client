@@ -9,7 +9,7 @@ const TopTips = () => {
 			.then((data) => setTopTipsData(data));
 	}, []);
 	return (
-		<section className="max-w-7xl mx-auto mt-16 space-y-12">
+		<section className="max-w-[96rem] mx-auto mt-16 space-y-12">
 			<h2 className="text-4xl font-bold text-center">
 				💠{" "}
 				<span className="bg-gradient-to-r from-green-700 via-dark to-green-700 bg-clip-text text-transparent">
