@@ -90,7 +90,7 @@ const SignUpCard = () => {
 		});
 	}
 	return (
-		<div className="max-w-md mx-auto p-8 rounded-3xl shadow-lg shadow-dark/20">
+		<div className="max-w-sm lg:max-w-md mx-auto p-8 rounded-3xl shadow-lg shadow-dark/20">
 			<h2 className="flex items-center justify-center gap-x-4 text-4xl font-bold uppercase text-primary">
 				<UserPlusIcon
 					size={32}

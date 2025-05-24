@@ -2,7 +2,7 @@ import Logo from "../assets/logo.png";
 
 const Footer = () => {
 	return (
-		<footer className="mt-24 p-32 bg-dark text-light flex justify-between">
+		<footer className="mt-24 px-6 py-16 lg:p-32 bg-dark text-light flex flex-col lg:flex-row justify-between gap-y-6">
 			{/* Logo */}
 			<div className="space-y-3">
 				<div className="flex items-center gap-x-3 cursor-default">

@@ -45,12 +45,12 @@ const ShareTipCard = () => {
 			});
 	};
 	return (
-		<div className="max-w-4xl mx-auto bg-stone-50 p-8 rounded-4xl shadow-lg shadow-dark/10">
-			<h2 className="text-4xl font-bold text-center uppercase text-primary">
+		<div className="max-w-sm lg:max-w-4xl mx-auto bg-stone-50 p-8 rounded-4xl shadow-lg shadow-dark/10">
+			<h2 className="text-3xl md:text-4xl font-bold text-center uppercase text-primary">
 				💡 Share A Garden Tip
 			</h2>
 			<form
-				className="max-w-xl mx-auto mt-12 space-y-4"
+				className="max-w-xs lg:max-w-xl mx-auto mt-12 space-y-4"
 				onSubmit={handleSubmit}
 			>
 				<label className="flex flex-col gap-y-1 text-lg">
@@ -135,7 +135,7 @@ const ShareTipCard = () => {
 				<div className="text-center mt-8">
 					<button
 						type="submit"
-						className="w-60 py-3 bg-primary text-light hover:bg-primary/90 text-2xl font-bold rounded-xl cursor-pointer"
+						className="w-40 md:w-60 py-3 bg-primary text-light hover:bg-primary/90 text-xl lg:text-2xl font-bold rounded-xl cursor-pointer"
 					>
 						Share Tip
 					</button>

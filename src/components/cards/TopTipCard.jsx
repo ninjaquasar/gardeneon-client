@@ -8,7 +8,7 @@ const TopTipCard = ({ data }) => {
 				<img
 					src={image_url}
 					alt="Thumbnail Image"
-					className="w-80 h-60 mx-auto object-cover object-center rounded-xl"
+					className="w-full md:w-80 h-60 mx-auto object-cover object-center rounded-xl"
 				/>
 				<h4
 					title="Title"
