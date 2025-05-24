@@ -12,6 +12,8 @@ import { useEffect, useState } from "react";
 const useAuth = () => {
 	// State of user
 	const [user, setUser] = useState(null);
+	// Loading state
+	const [loading, setLoading] = useState(true);
 	// Login user with Google
 	const googleLogin = () => {
 		const provider = new GoogleAuthProvider();
@@ -45,9 +47,10 @@ const useAuth = () => {
 	useEffect(() => {
 		const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
 			getUserProfile(currentUser);
+			setLoading(false);
 		});
 	}, []);
-	return { googleLogin, passwordLogin, signUp, user, logout };
+	return { googleLogin, passwordLogin, signUp, user, loading, logout };
 };
 
 export default useAuth;

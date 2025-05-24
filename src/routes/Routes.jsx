@@ -8,6 +8,7 @@ import BrowseTipsPage from "../pages/BrowseTipsPage";
 import TipDetails from "../pages/TipDetails";
 import ExploreGardeners from "../pages/ExploreGardeners";
 import UpdateTip from "../pages/UpdateTip";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
 	{
@@ -37,16 +38,28 @@ const router = createBrowserRouter([
 			},
 			{
 				path: "/tip/create",
-				Component: ShareTipPage,
+				element: (
+					<PrivateRoute>
+						<ShareTipPage></ShareTipPage>
+					</PrivateRoute>
+				),
 			},
 			{
 				path: "/tip/details/:id",
-				Component: TipDetails,
+				element: (
+					<PrivateRoute>
+						<TipDetails></TipDetails>
+					</PrivateRoute>
+				),
 				loader: () => fetch(`https://a10-gardeneon-server.vercel.app/tips`),
 			},
 			{
 				path: "/tip/update/:id",
-				Component: UpdateTip,
+				element: (
+					<PrivateRoute>
+						<UpdateTip></UpdateTip>
+					</PrivateRoute>
+				),
 				loader: () => fetch(`https://a10-gardeneon-server.vercel.app/tips`),
 			},
 		],
