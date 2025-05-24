@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 const ExploreGardeners = () => {
 	const [gardeners, setGardeners] = useState([]);
 	useEffect(() => {
-		fetch("http://localhost:5100/gardeners")
+		fetch("https://a10-gardeneon-server.vercel.app/gardeners")
 			.then((res) => res.json())
 			.then((data) => setGardeners(data));
 	}, []);

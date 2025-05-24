@@ -4,7 +4,7 @@ import TopTipCard from "../../components/cards/TopTipCard";
 const TopTips = () => {
 	const [topTipsData, setTopTipsData] = useState([]);
 	useEffect(() => {
-		fetch("http://localhost:5100/tips/top-6")
+		fetch("https://a10-gardeneon-server.vercel.app/tips/top-6")
 			.then((res) => res.json())
 			.then((data) => setTopTipsData(data));
 	}, []);

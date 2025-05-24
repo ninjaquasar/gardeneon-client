@@ -7,7 +7,7 @@ import TestimonialCard from "../../components/cards/TestimonialCard";
 const Testimonials = () => {
 	const [testimonials, setTestimonials] = useState([]);
 	useEffect(() => {
-		fetch("http://localhost:5100/testimonials")
+		fetch("https://a10-gardeneon-server.vercel.app/testimonials")
 			.then((res) => res.json())
 			.then((data) => setTestimonials(data));
 	}, []);

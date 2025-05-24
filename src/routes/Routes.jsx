@@ -32,7 +32,7 @@ const router = createBrowserRouter([
 			{
 				path: "/browse-tips",
 				Component: BrowseTipsPage,
-				loader: () => fetch("http://localhost:5100/tips"),
+				loader: () => fetch("https://a10-gardeneon-server.vercel.app/tips"),
 			},
 			{
 				path: "/share-tip",
@@ -41,7 +41,7 @@ const router = createBrowserRouter([
 			{
 				path: "/tip/:id",
 				Component: TipDetails,
-				loader: () => fetch("http://localhost:5100/tips"),
+				loader: () => fetch("https://a10-gardeneon-server.vercel.app/tips"),
 			},
 		],
 	},
