@@ -8,6 +8,10 @@ const Slogan = () => {
 					"Your Gardening Guide, Powered by Community.",
 					"Share Tips and Grow Together",
 				]}
+				typeSpeed={75}
+				cursor={true}
+				cursorBlinking={true}
+				cursorColor="var(--color-primary)"
 			></Typewriter>
 		</h2>
 	);

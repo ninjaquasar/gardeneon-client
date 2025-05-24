@@ -51,7 +51,7 @@ const SignUpCard = () => {
 				toast.success("Logged in successfully. Welcome back to the community!", {
 					theme: "light",
 					position: "top-left",
-					autoClose: 4000,
+					autoClose: 2500,
 					closeOnClick: true,
 					hideProgressBar: false,
 					draggable: true,

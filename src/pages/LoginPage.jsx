@@ -1,9 +1,12 @@
+import { Zoom } from "react-awesome-reveal";
 import LoginCard from "../components/cards/LoginCard";
 
 const LoginPage = () => {
 	return (
 		<main className="py-8">
-			<LoginCard />
+			<Zoom duration={500}>
+				<LoginCard />
+			</Zoom>
 		</main>
 	);
 };

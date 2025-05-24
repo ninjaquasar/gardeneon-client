@@ -11,14 +11,14 @@ const HomePage = () => {
 		<main>
 			<Hero />
 			<Slogan />
-			<Zoom>
+			<Zoom duration={600}>
 				<ActiveGardeners />
 			</Zoom>
 			<TopTips />
-			<JackInTheBox>
+			<JackInTheBox duration={750}>
 				<Testimonials />
 			</JackInTheBox>
-			<Zoom>
+			<Zoom duration={600}>
 				<TopGardenGears />
 			</Zoom>
 		</main>

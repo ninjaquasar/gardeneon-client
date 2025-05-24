@@ -7,7 +7,7 @@ const BrowseTipsPage = () => {
 			<h2 className="text-3xl md:text-4xl font-bold text-center uppercase text-primary">
 				📖 Browse Tips
 			</h2>
-			<Zoom>
+			<Zoom duration={700}>
 				<TipsTable />
 			</Zoom>
 		</main>

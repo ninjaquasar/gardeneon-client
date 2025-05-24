@@ -1,9 +1,16 @@
 import { NavLink } from "react-router";
 import Logo from "../assets/logo.png";
 import { useState } from "react";
+import useAuth from "../hooks/useAuth";
 
 const Navbar = () => {
 	const [showMenu, setShowMenu] = useState(false);
+	const { user, logout } = useAuth();
+	const [showUsername, setShowUsername] = useState(false);
+	const [showLogoutBtn, setShowLogoutBtn] = useState(false);
+	const handleLogout = () => {
+		logout();
+	};
 	return (
 		<nav className="px-6 lg:px-32 xl:px-20 2xl:px-32 py-4 flex items-center justify-between border-b border-b-stone-100">
 			{/* Side menu */}
@@ -137,25 +144,58 @@ const Navbar = () => {
 					</li>
 				</ul>
 			</div>
-			{/* Right-aligned Buttons */}
-			<div className="hidden md:flex items-center gap-x-4">
-				<NavLink to="/login">
+			{/* Right-aligned Buttons and User info */}
+			{user ? (
+				<div className="hidden md:flex items-center gap-x-4 relative">
+					<img
+						src={
+							user.photoURL
+								? user.photoURL
+								: "https://cdn-icons-png.flaticon.com/128/4943/4943065.png"
+						}
+						alt="Profile Picture"
+						className="size-12 object-cover object-center rounded-full border border-primary cursor-pointer"
+						onMouseOver={() => setShowUsername(showLogoutBtn ? false : true)}
+						onMouseOut={() => setShowUsername(false)}
+						onClick={() => setShowLogoutBtn(!showLogoutBtn)}
+					/>
+					<p
+						className={`px-3 py-1 bg-primary rounded-md font-semibold text-light ${
+							showUsername ? "absolute top-13 -left-5" : "hidden"
+						} z-10`}
+					>
+						{user.fullName ? user.fullName : "Unknown"}
+					</p>
 					<button
 						type="button"
-						className="px-5 py-2 bg-primary text-light hover:bg-primary/90 text-lg font-bold rounded-lg cursor-pointer"
+						className={`px-4 py-2 bg-primary text-light hover:bg-[#509000] font-bold rounded-lg cursor-pointer ${
+							showLogoutBtn ? "absolute top-13 left-0" : "hidden"
+						} z-20`}
+						onClick={handleLogout}
 					>
-						Login
+						Logout
 					</button>
-				</NavLink>
-				<NavLink to="/signup">
-					<button
-						type="button"
-						className="px-5 py-2 bg-primary text-light hover:bg-primary/90 text-lg font-bold rounded-lg cursor-pointer"
-					>
-						Sign Up
-					</button>
-				</NavLink>
-			</div>
+				</div>
+			) : (
+				<div className="hidden md:flex items-center gap-x-4">
+					<NavLink to="/login">
+						<button
+							type="button"
+							className="px-5 py-2 bg-primary text-light hover:bg-primary/90 text-lg font-bold rounded-lg cursor-pointer"
+						>
+							Login
+						</button>
+					</NavLink>
+					<NavLink to="/signup">
+						<button
+							type="button"
+							className="px-5 py-2 bg-primary text-light hover:bg-primary/90 text-lg font-bold rounded-lg cursor-pointer"
+						>
+							Sign Up
+						</button>
+					</NavLink>
+				</div>
+			)}
 		</nav>
 	);
 };
