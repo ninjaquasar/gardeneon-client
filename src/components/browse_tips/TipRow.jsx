@@ -36,7 +36,7 @@ const TipRow = ({ data }) => {
 	};
 	return (
 		<div className="p-3 grid grid-cols-5 items-center text-lg border-t border-t-dark/10">
-			<div className="lg:size-24 2xl:size-20 overflow-hidden rounded-md">
+			<div className="size-24 overflow-hidden rounded-md">
 				<img
 					src={image_url}
 					alt="Top 5 Plants for Apartment Gardening"
@@ -46,7 +46,7 @@ const TipRow = ({ data }) => {
 			<p className="col-span-2">{title}</p>
 			<p>{category}</p>
 			<div className="flex gap-x-2">
-				<Link to={`/tip/${_id}`}>
+				<Link to={`/tip/details/${_id}`}>
 					<button
 						type="button"
 						className="p-2 bg-primary/85 border border-primary text-light hover:bg-primary font-medium rounded-lg cursor-pointer"
@@ -61,7 +61,7 @@ const TipRow = ({ data }) => {
 				>
 					🗑️
 				</button>
-				<Link to={`/update-tip/${_id}`}>
+				<Link to={`/tip/update/${_id}`}>
 					<button
 						type="button"
 						className="p-2 bg-primary/85 border border-primary text-light hover:bg-primary font-medium rounded-lg cursor-pointer"

@@ -38,7 +38,7 @@ const Navbar = () => {
 						</li>
 						<li>
 							<NavLink
-								to="/browse-tips"
+								to="/tips"
 								className="pl-4 py-1 rounded-sm border-s-2 border-transparent hover:border-s-primary"
 							>
 								Browse Tips
@@ -46,7 +46,7 @@ const Navbar = () => {
 						</li>
 						<li>
 							<NavLink
-								to="/share-tip"
+								to="/tip/create"
 								className="pl-4 py-1 rounded-sm border-s-2 border-transparent hover:border-s-primary"
 							>
 								Share Garden Tip
@@ -113,7 +113,7 @@ const Navbar = () => {
 					</li>
 					<li>
 						<NavLink
-							to="/browse-tips"
+							to="/tips"
 							className="px-3 py-2 rounded-md hover:bg-stone-100/80"
 						>
 							Browse Tips
@@ -121,7 +121,7 @@ const Navbar = () => {
 					</li>
 					<li>
 						<NavLink
-							to="/share-tip"
+							to="/tip/create"
 							className="px-3 py-2 rounded-md hover:bg-stone-100/80"
 						>
 							Share Garden Tip
