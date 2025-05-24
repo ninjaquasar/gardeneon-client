@@ -1,7 +1,39 @@
 import { Link } from "react-router";
+import Swal from "sweetalert2";
 
 const TipRow = ({ data }) => {
 	const { _id, image_url, title, category } = data;
+	const handleDelete = (id) => {
+		Swal.fire({
+			icon: "warning",
+			title: "Are you sure?",
+			text: "You want to delete the tip? It's irreversible!",
+			iconColor: "#ffa500",
+			showCancelButton: true,
+			cancelButtonColor: "#dc143c",
+			cancelButtonText: "Nope",
+			confirmButtonColor: "var(--color-primary)",
+			confirmButtonText: "Yes, Delete",
+		}).then((result) => {
+			if (result.isConfirmed) {
+				fetch(`http://localhost:5100/tips/delete/${_id}`, {
+					method: "DELETE",
+				})
+					.then((res) => res.json())
+					.then((data) => {
+						if (data.acknowledged) {
+							Swal.fire({
+								icon: "info",
+								title: "Deleted",
+								text: "The tip is deleted successfully.",
+								confirmButtonText: "Okay",
+								confirmButtonColor: "var(--color-primary)",
+							});
+						}
+					});
+			}
+		});
+	};
 	return (
 		<div className="p-3 grid grid-cols-5 items-center text-lg border-t border-t-dark/10">
 			<div className="lg:size-24 2xl:size-20 overflow-hidden rounded-md">
@@ -13,14 +45,31 @@ const TipRow = ({ data }) => {
 			</div>
 			<p className="col-span-2">{title}</p>
 			<p>{category}</p>
-			<Link to={`/tip/${_id}`}>
+			<div className="flex gap-x-2">
+				<Link to={`/tip/${_id}`}>
+					<button
+						type="button"
+						className="p-2 bg-primary/85 border border-primary text-light hover:bg-primary font-medium rounded-lg cursor-pointer"
+					>
+						👁️
+					</button>
+				</Link>
 				<button
 					type="button"
-					className="px-4 py-2 bg-primary text-light hover:bg-primary/90 font-medium rounded-lg cursor-pointer"
+					className="p-2 bg-primary/85 border border-primary text-light hover:bg-primary font-medium rounded-lg cursor-pointer"
+					onClick={() => handleDelete(_id)}
 				>
-					View More
+					🗑️
 				</button>
-			</Link>
+				<Link to={`/update-tip/${_id}`}>
+					<button
+						type="button"
+						className="p-2 bg-primary/85 border border-primary text-light hover:bg-primary font-medium rounded-lg cursor-pointer"
+					>
+						📝
+					</button>
+				</Link>
+			</div>
 		</div>
 	);
 };

@@ -4,7 +4,7 @@ const TipsTableHead = () => {
 			<h6>Image</h6>
 			<h6 className="col-span-2">Title</h6>
 			<h6>Category</h6>
-			<h6>Action</h6>
+			<h6>Actions</h6>
 		</div>
 	);
 };

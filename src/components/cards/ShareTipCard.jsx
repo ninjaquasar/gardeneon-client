@@ -9,7 +9,7 @@ const ShareTipCard = () => {
 		const formData = new FormData(form);
 		const tipData = Object.fromEntries(formData.entries());
 		// Send data to server
-		fetch("https://a10-gardeneon-server.vercel.app/tips", {
+		fetch("https://a10-gardeneon-server.vercel.app/tips/create", {
 			method: "POST",
 			headers: {
 				"content-type": "application/json",
