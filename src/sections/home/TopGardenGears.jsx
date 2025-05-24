@@ -1,13 +1,13 @@
 const TopGardenGears = () => {
 	return (
-		<section className="max-w-[1536px] mx-auto mt-40 space-y-12">
+		<section className="lg:max-w-4xl xl:max-w-5xl 2xl:max-w-[96rem] mx-auto mt-40 space-y-12">
 			<h2 className="text-4xl font-bold text-center">
 				🧰{" "}
 				<span className="bg-gradient-to-r from-green-700 via-dark to-green-700 bg-clip-text text-transparent">
 					Garden Gears
 				</span>
 			</h2>
-			<div className="grid grid-cols-3 gap-8">
+			<div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
 				<div className="bg-stone-50 border border-dark/10 p-6 rounded-3xl">
 					<img
 						src="https://radhakrishnaagriculture.in/cdn/shop/files/digging.jpg"

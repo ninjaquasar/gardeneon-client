@@ -12,7 +12,7 @@ const Testimonials = () => {
 			.then((data) => setTestimonials(data));
 	}, []);
 	return (
-		<section className="max-w-[96rem] mx-auto mt-28 space-y-12">
+		<section className="lg:max-w-4xl xl:max-w-5xl 2xl:max-w-[96rem] mx-auto mt-28 space-y-12">
 			<h2 className="text-4xl font-bold text-center">
 				🗣️{" "}
 				<span className="bg-gradient-to-r from-green-700 via-dark to-green-700 bg-clip-text text-transparent">
@@ -21,9 +21,20 @@ const Testimonials = () => {
 			</h2>
 			<Swiper
 				modules={[Pagination]}
-				slidesPerView={2}
-				slidesPerGroup={2}
-				spaceBetween={96}
+				slidesPerView={1}
+				slidesPerGroup={1}
+				breakpoints={{
+					1024: {
+						slidesPerView: 2,
+						slidesPerGroup: 2,
+						spaceBetween: 80,
+					},
+					1280: {
+						slidesPerView: 2,
+						slidesPerGroup: 2,
+						spaceBetween: 96,
+					},
+				}}
 				pagination={{
 					enabled: true,
 					clickable: true,

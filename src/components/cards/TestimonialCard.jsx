@@ -9,7 +9,7 @@ const TestimonialCard = ({ data }) => {
 				alt="Background Image"
 				className="size-16 absolute left-1/2 top-2 -translate-x-1/2 opacity-30"
 			/>
-			<div className="flex items-center justify-between">
+			<div className="flex flex-col 2xl:flex-row gap-y-5 2xl:items-center justify-between">
 				<div className="flex items-center gap-4">
 					<img
 						src={`https://randomuser.me/api/portraits/${image}.jpg`}

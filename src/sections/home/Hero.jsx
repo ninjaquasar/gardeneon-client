@@ -24,7 +24,7 @@ const Hero = () => {
 							alt="Urban Gardening"
 							className="w-full h-full object-cover object-center"
 						/>
-						<h1 className="absolute top-8 left-1/2 -translate-x-1/2 text-5xl font-bold text-dark">
+						<h1 className="w-max absolute top-8 left-1/2 -translate-x-1/2 text-5xl font-bold text-dark">
 							Green isn't just a Color, it's a Vibe
 						</h1>
 					</div>
@@ -36,7 +36,7 @@ const Hero = () => {
 							alt="Community Gardening"
 							className="w-full h-full object-cover object-center"
 						/>
-						<h1 className="absolute top-8 left-1/2 -translate-x-1/2 text-5xl font-bold text-dark">
+						<h1 className="w-max absolute top-8 left-1/2 -translate-x-1/2 text-5xl font-bold text-dark">
 							Grow Together and Glow Forever
 						</h1>
 					</div>
@@ -48,7 +48,7 @@ const Hero = () => {
 							alt="Gardening Plants"
 							className="w-full h-full object-cover object-center"
 						/>
-						<h1 className="absolute top-8 left-1/2 -translate-x-1/2 text-5xl font-bold text-light">
+						<h1 className="w-max absolute top-8 left-1/2 -translate-x-1/2 text-5xl font-bold text-light">
 							Plant the Seed and Join the Story.
 						</h1>
 					</div>

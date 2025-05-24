@@ -3,7 +3,8 @@ import Logo from "../assets/logo.png";
 
 const Navbar = () => {
 	return (
-		<nav className="px-32 py-4 flex items-center justify-between border-b border-b-stone-100">
+		<nav className="lg:px-32 xl:px-20 2xl:px-32 py-4 flex items-center justify-between border-b border-b-stone-100">
+			{/* Side menu */}
 			{/* Left-aligned Logo */}
 			<NavLink>
 				<div
