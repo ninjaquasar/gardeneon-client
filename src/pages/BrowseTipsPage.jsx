@@ -1,3 +1,4 @@
+import { Zoom } from "react-awesome-reveal";
 import TipsTable from "../components/browse_tips/TipsTable";
 
 const BrowseTipsPage = () => {
@@ -6,7 +7,9 @@ const BrowseTipsPage = () => {
 			<h2 className="text-3xl md:text-4xl font-bold text-center uppercase text-primary">
 				📖 Browse Tips
 			</h2>
-			<TipsTable />
+			<Zoom>
+				<TipsTable />
+			</Zoom>
 		</main>
 	);
 };

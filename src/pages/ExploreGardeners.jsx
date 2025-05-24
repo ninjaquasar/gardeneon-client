@@ -1,3 +1,4 @@
+import { Slide } from "react-awesome-reveal";
 import GardenerCard from "../components/cards/GardenerCard";
 import { useEffect, useState } from "react";
 
@@ -16,15 +17,17 @@ const ExploreGardeners = () => {
 					Explore Gardeners
 				</span>
 			</h2>
-			<div className="grid lg:grid-cols-3 2xl:grid-cols-4 gap-6 lg:gap-8">
-				{gardeners.map((gardener) => (
-					<GardenerCard
-						key={gardener._id}
-						data={gardener}
-						showStatus={true}
-					/>
-				))}
-			</div>
+			<Slide direction="up">
+				<div className="grid lg:grid-cols-3 2xl:grid-cols-4 gap-6 lg:gap-8">
+					{gardeners.map((gardener) => (
+						<GardenerCard
+							key={gardener._id}
+							data={gardener}
+							showStatus={true}
+						/>
+					))}
+				</div>
+			</Slide>
 		</main>
 	);
 };

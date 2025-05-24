@@ -49,14 +49,14 @@ const TipRow = ({ data }) => {
 				<Link to={`/tip/details/${_id}`}>
 					<button
 						type="button"
-						className="p-2 bg-primary/85 border border-primary text-light hover:bg-primary font-medium rounded-lg cursor-pointer"
+						className="p-2 bg-primary border border-primary text-light font-medium rounded-lg cursor-pointer"
 					>
 						👁️
 					</button>
 				</Link>
 				<button
 					type="button"
-					className="p-2 bg-primary/85 border border-primary text-light hover:bg-primary font-medium rounded-lg cursor-pointer"
+					className="p-2 bg-primary border border-primary text-light font-medium rounded-lg cursor-pointer"
 					onClick={() => handleDelete(_id)}
 				>
 					🗑️
@@ -64,7 +64,7 @@ const TipRow = ({ data }) => {
 				<Link to={`/tip/update/${_id}`}>
 					<button
 						type="button"
-						className="p-2 bg-primary/85 border border-primary text-light hover:bg-primary font-medium rounded-lg cursor-pointer"
+						className="p-2 bg-primary border border-primary text-light font-medium rounded-lg cursor-pointer"
 					>
 						📝
 					</button>

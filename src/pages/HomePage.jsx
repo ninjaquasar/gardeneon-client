@@ -1,17 +1,26 @@
+import { JackInTheBox, Zoom } from "react-awesome-reveal";
 import ActiveGardeners from "../sections/home/ActiveGardeners";
 import Hero from "../sections/home/Hero";
 import Testimonials from "../sections/home/Testimonials";
 import TopGardenGears from "../sections/home/TopGardenGears";
 import TopTips from "../sections/home/TopTips";
+import Slogan from "../components/Slogan";
 
 const HomePage = () => {
 	return (
 		<main>
 			<Hero />
-			<ActiveGardeners />
+			<Slogan />
+			<Zoom>
+				<ActiveGardeners />
+			</Zoom>
 			<TopTips />
-			<Testimonials />
-			<TopGardenGears />
+			<JackInTheBox>
+				<Testimonials />
+			</JackInTheBox>
+			<Zoom>
+				<TopGardenGears />
+			</Zoom>
 		</main>
 	);
 };
