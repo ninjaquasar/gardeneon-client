@@ -104,7 +104,7 @@ const LoginCard = () => {
 					<span className="font-medium">Email</span>
 					<input
 						type="email"
-						className="p-2 bg-stone-50 border border-dark/20 rounded-lg focus:outline-none focus:border-primary caret-primary"
+						className="p-2 bg-stone-50 dark:bg-stone-800 border border-dark/20 dark:border-light/20 rounded-lg focus:outline-none focus:border-primary caret-primary"
 						placeholder="Account Email"
 						{...register("email", {
 							required: "Email is required",
@@ -115,7 +115,7 @@ const LoginCard = () => {
 					<span className="font-medium">Password</span>
 					<input
 						type="password"
-						className="p-2 bg-stone-50 border border-dark/20 rounded-lg focus:outline-none focus:border-primary caret-primary"
+						className="p-2 bg-stone-50 dark:bg-stone-800 border border-dark/20 dark:border-light/20 rounded-lg focus:outline-none focus:border-primary caret-primary"
 						placeholder="Account Password"
 						{...register("password", { required: "Password is required" })}
 					/>
@@ -130,14 +130,14 @@ const LoginCard = () => {
 				</div>
 			</form>
 			<div className="relative mb-8">
-				<hr className="text-stone-300" />
-				<span className="absolute -top-3 left-1/2 -translate-x-1/2 font-semibold px-2 bg-light text-stone-500">
+				<hr className="text-stone-300 dark:text-stone-600" />
+				<span className="absolute -top-3 left-1/2 -translate-x-1/2 font-semibold px-2 bg-light dark:bg-dark text-stone-500">
 					OR
 				</span>
 			</div>
 			<button
 				type="button"
-				className="w-full py-2 flex items-center justify-center gap-x-3 border border-primary/75 text-stone-700 hover:bg-primary/10 text-lg font-medium rounded-full transition-colors duration-100 cursor-pointer"
+				className="w-full py-2 flex items-center justify-center gap-x-3 border border-primary/75 text-stone-700 dark:text-stone-300 hover:bg-primary/10 text-lg font-medium rounded-full transition-colors duration-100 cursor-pointer"
 				onClick={handleGoogleLogin}
 			>
 				<img
@@ -147,7 +147,7 @@ const LoginCard = () => {
 				/>
 				Login with Google
 			</button>
-			<p className="text-center text-slate-600 font-semibold mt-6">
+			<p className="text-center text-stone-600 dark:text-stone-400 font-semibold mt-6">
 				First time in the garden?{" "}
 				<Link
 					to="/signup"

@@ -52,7 +52,7 @@ const UpdateTipCard = () => {
 						type="text"
 						name="title"
 						defaultValue={title}
-						className="p-2 bg-stone-50 border border-dark/20 rounded-lg focus:outline-none focus:border-primary caret-primary"
+						className="p-2 bg-stone-50 dark:bg-stone-800 border border-dark/20 dark:border-light/20 rounded-lg focus:outline-none focus:border-primary caret-primary"
 					/>
 				</label>
 				<label className="flex flex-col gap-y-1 text-lg">
@@ -61,14 +61,14 @@ const UpdateTipCard = () => {
 						type="text"
 						name="plant_type"
 						defaultValue={plant_type}
-						className="p-2 bg-stone-50 border border-dark/20 rounded-lg focus:outline-none focus:border-primary caret-primary"
+						className="p-2 bg-stone-50 dark:bg-stone-800 border border-dark/20 dark:border-light/20 rounded-lg focus:outline-none focus:border-primary caret-primary"
 					/>
 				</label>
 				<label className="flex flex-col gap-y-1 text-lg">
 					<span className="font-medium">Difficulty</span>
 					<select
 						name="difficulty"
-						className="max-w-3xs bg-stone-50 border border-dark/20 rounded-md p-1"
+						className="max-w-3xs bg-stone-50 dark:bg-stone-800 border border-dark/20 dark:border-light/20 rounded-md p-1"
 						defaultValue={difficulty}
 					>
 						<option value="Easy">Easy</option>
@@ -82,14 +82,14 @@ const UpdateTipCard = () => {
 						rows="5"
 						name="description"
 						defaultValue={description}
-						className="p-2 bg-stone-50 border border-dark/20 rounded-lg focus:outline-none focus:border-primary caret-primary"
+						className="p-2 bg-stone-50 dark:bg-stone-800 border border-dark/20 dark:border-light/20 rounded-lg focus:outline-none focus:border-primary caret-primary"
 					/>
 				</label>
 				<label className="flex flex-col gap-y-1 text-lg">
 					<span className="font-medium">Category</span>
 					<select
 						name="category"
-						className="max-w-3xs bg-stone-50 border border-dark/20 rounded-md p-1"
+						className="max-w-3xs bg-stone-50 dark:bg-stone-800 border border-dark/20 dark:border-light/20 rounded-md p-1"
 						defaultValue={category}
 					>
 						<option value="None">None</option>
@@ -114,7 +114,7 @@ const UpdateTipCard = () => {
 						type="url"
 						name="image_url"
 						defaultValue={image_url}
-						className="p-2 bg-stone-50 border border-dark/20 rounded-lg focus:outline-none focus:border-primary caret-primary"
+						className="p-2 bg-stone-50 dark:bg-stone-800 border border-dark/20 dark:border-light/20 rounded-lg focus:outline-none focus:border-primary caret-primary"
 					/>
 				</label>
 				<label className="flex flex-col gap-y-1 text-lg">
@@ -122,7 +122,7 @@ const UpdateTipCard = () => {
 					<select
 						name="visibility"
 						defaultValue={visibility}
-						className="max-w-3xs bg-stone-50 border border-dark/20 rounded-md p-1"
+						className="max-w-3xs bg-stone-50 dark:bg-stone-800 border border-dark/20 dark:border-light/20 rounded-md p-1"
 					>
 						<option selected>Public</option>
 						<option>Hidden</option>

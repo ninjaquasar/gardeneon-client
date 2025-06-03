@@ -5,7 +5,7 @@ import TipsTableHead from "./TipsTableHead";
 const TipsTable = () => {
 	const tipsData = useLoaderData();
 	return (
-		<div className="flex flex-col border-y border-y-dark/10">
+		<div className="flex flex-col border-y border-y-dark/10 dark:border-y-light/10">
 			<TipsTableHead />
 			{tipsData.map((tipData) => (
 				<TipRow

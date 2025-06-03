@@ -13,7 +13,7 @@ const Navbar = () => {
 		logout();
 	};
 	return (
-		<nav className="px-6 lg:px-32 xl:px-20 2xl:px-32 py-4 flex items-center justify-between border-b border-b-stone-100">
+		<nav className="px-6 lg:px-32 xl:px-20 2xl:px-32 py-4 flex items-center justify-between">
 			{/* Side menu */}
 			<div className="md:hidden relative">
 				<h3
@@ -25,7 +25,7 @@ const Navbar = () => {
 				<ul
 					className={`w-48 ${
 						showMenu ? "absolute" : "hidden"
-					} top-12 left-0 py-3 bg-stone-100 rounded-2xl space-y-4 z-10`}
+					} top-12 left-0 py-3 bg-stone-100 dark:bg-stone-800 rounded-2xl space-y-4 z-10`}
 				>
 					<div className="space-y-1">
 						<li>
@@ -106,7 +106,7 @@ const Navbar = () => {
 					<li>
 						<NavLink
 							to="/"
-							className="px-3 py-2 rounded-md hover:bg-stone-100/80"
+							className="px-3 py-2 rounded-md hover:bg-stone-100/80 dark:hover:bg-stone-800/80"
 						>
 							Home
 						</NavLink>
@@ -114,7 +114,7 @@ const Navbar = () => {
 					<li>
 						<NavLink
 							to="/gardeners"
-							className="px-3 py-2 rounded-md hover:bg-stone-100/80"
+							className="px-3 py-2 rounded-md hover:bg-stone-100/80 dark:hover:bg-stone-800/80"
 						>
 							Explore Gardeners
 						</NavLink>
@@ -122,7 +122,7 @@ const Navbar = () => {
 					<li>
 						<NavLink
 							to="/tips"
-							className="px-3 py-2 rounded-md hover:bg-stone-100/80"
+							className="px-3 py-2 rounded-md hover:bg-stone-100/80 dark:hover:bg-stone-800/80"
 						>
 							Browse Tips
 						</NavLink>
@@ -130,7 +130,7 @@ const Navbar = () => {
 					<li>
 						<NavLink
 							to="/tip/create"
-							className="px-3 py-2 rounded-md hover:bg-stone-100/80"
+							className="px-3 py-2 rounded-md hover:bg-stone-100/80 dark:hover:bg-stone-800/80"
 						>
 							Share Garden Tip
 						</NavLink>
@@ -138,7 +138,7 @@ const Navbar = () => {
 					<li>
 						<NavLink
 							to="/my-tips"
-							className="px-3 py-2 rounded-md hover:bg-stone-100/80"
+							className="px-3 py-2 rounded-md hover:bg-stone-100/80 dark:hover:bg-stone-800/80"
 						>
 							My Tips
 						</NavLink>
@@ -160,6 +160,7 @@ const Navbar = () => {
 						onMouseOut={() => setShowUsername(false)}
 						onClick={() => setShowLogoutBtn(!showLogoutBtn)}
 					/>
+					<ToggleTheme />
 					<p
 						className={`px-3 py-1 bg-primary rounded-md font-semibold text-light ${
 							showUsername ? "absolute top-13 -left-5" : "hidden"

@@ -15,7 +15,7 @@ const TipDetailsLayout = () => {
 					className="w-full aspect-square object-cover object-center rounded-3xl"
 				/>
 			</div>
-			<div className="flex flex-col justify-center gap-y-6 col-span-8 border border-dark/10 bg-stone-50 rounded-3xl p-6">
+			<div className="flex flex-col justify-center gap-y-6 col-span-8 border border-dark/10 bg-stone-50 dark:bg-stone-800 dark:border-light/10 rounded-3xl p-6">
 				<h3
 					title="Title"
 					className="text-3xl font-bold"

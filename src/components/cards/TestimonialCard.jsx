@@ -5,7 +5,7 @@ const TestimonialCard = ({ data }) => {
 	let ratingText = "";
 	for (let i = 0; i < rating; i++) ratingText += "⭐️";
 	return (
-		<div className="bg-stone-50 border border-dark/10 rounded-3xl p-8 space-y-6 relative h-full">
+		<div className="border border-dark/10 dark:border-light/10 bg-stone-50 dark:bg-stone-800 rounded-3xl p-8 space-y-6 relative h-full">
 			<img
 				src={Quote}
 				alt="Background Image"
@@ -20,7 +20,9 @@ const TestimonialCard = ({ data }) => {
 					/>
 					<div>
 						<h4 className="text-2xl font-bold">{name}</h4>
-						<h6 className="text-lg font-medium text-stone-500">{designation}</h6>
+						<h6 className="text-lg font-medium text-stone-500 dark:text-stone-300">
+							{designation}
+						</h6>
 					</div>
 				</div>
 				<h4 className="text-2xl">{ratingText}</h4>

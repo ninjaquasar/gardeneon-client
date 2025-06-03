@@ -45,7 +45,7 @@ const ShareTipCard = () => {
 			});
 	};
 	return (
-		<div className="max-w-sm lg:max-w-4xl mx-auto bg-stone-50 p-8 rounded-4xl shadow-lg shadow-dark/10">
+		<div className="max-w-sm lg:max-w-4xl mx-auto bg-stone-50 dark:bg-stone-800 p-8 rounded-4xl shadow-lg shadow-dark/10">
 			<h2 className="text-3xl md:text-4xl font-bold text-center uppercase text-primary">
 				💡 Share A Garden Tip
 			</h2>
@@ -58,7 +58,7 @@ const ShareTipCard = () => {
 					<input
 						type="text"
 						name="title"
-						className="p-2 bg-stone-50 border border-dark/20 rounded-lg focus:outline-none focus:border-primary caret-primary"
+						className="p-2 bg-stone-50 dark:bg-stone-800 border border-dark/20 dark:border-light/20 rounded-lg focus:outline-none focus:border-primary caret-primary"
 						placeholder="Tip Post Title"
 					/>
 				</label>
@@ -67,7 +67,7 @@ const ShareTipCard = () => {
 					<input
 						type="text"
 						name="plant_type"
-						className="p-2 bg-stone-50 border border-dark/20 rounded-lg focus:outline-none focus:border-primary caret-primary"
+						className="p-2 bg-stone-50 dark:bg-stone-800 border border-dark/20 dark:border-light/20 rounded-lg focus:outline-none focus:border-primary caret-primary"
 						placeholder="Plant Type/Topic"
 					/>
 				</label>
@@ -75,7 +75,7 @@ const ShareTipCard = () => {
 					<span className="font-medium">Difficulty</span>
 					<select
 						name="difficulty"
-						className="max-w-3xs border border-dark/20 rounded-md p-1"
+						className="max-w-3xs dark:bg-stone-800 border border-dark/20 dark:border-light/20 rounded-md p-1"
 					>
 						<option>Easy</option>
 						<option selected>Medium</option>
@@ -87,7 +87,7 @@ const ShareTipCard = () => {
 					<textarea
 						rows="5"
 						name="description"
-						className="p-2 bg-stone-50 border border-dark/20 rounded-lg focus:outline-none focus:border-primary caret-primary"
+						className="p-2 bg-stone-50 dark:bg-stone-800 border border-dark/20 dark:border-light/20 rounded-lg focus:outline-none focus:border-primary caret-primary"
 						placeholder="Tip Description"
 					/>
 				</label>
@@ -95,7 +95,7 @@ const ShareTipCard = () => {
 					<span className="font-medium">Category</span>
 					<select
 						name="category"
-						className="max-w-3xs border border-dark/20 rounded-md p-1"
+						className="max-w-3xs border border-dark/20 dark:border-light/20 rounded-md p-1"
 					>
 						<option selected>None</option>
 						<option>Plant Care</option>
@@ -118,7 +118,7 @@ const ShareTipCard = () => {
 					<input
 						type="url"
 						name="image_url"
-						className="p-2 bg-stone-50 border border-dark/20 rounded-lg focus:outline-none focus:border-primary caret-primary"
+						className="p-2 bg-stone-50 dark:bg-stone-800 border border-dark/20 dark:border-light/20 rounded-lg focus:outline-none focus:border-primary caret-primary"
 						placeholder="Tip Post Thumbnail URL"
 					/>
 				</label>
@@ -126,7 +126,7 @@ const ShareTipCard = () => {
 					<span className="font-medium">Visibility</span>
 					<select
 						name="visibility"
-						className="max-w-3xs border border-dark/20 rounded-md p-1"
+						className="max-w-3xs border border-dark/20 dark:border-light/20 rounded-md p-1"
 					>
 						<option selected>Public</option>
 						<option>Hidden</option>

@@ -4,7 +4,9 @@ import Swal from "sweetalert2";
 const TipRow = ({ data }) => {
 	const { _id, image_url, title, category } = data;
 	const handleDelete = (id) => {
+		const currentTheme = localStorage.getItem("theme");
 		Swal.fire({
+			theme: currentTheme,
 			icon: "warning",
 			title: "Are you sure?",
 			text: "You want to delete the tip? It's irreversible!",
@@ -35,7 +37,7 @@ const TipRow = ({ data }) => {
 		});
 	};
 	return (
-		<div className="p-3 grid grid-cols-5 items-center text-lg border-t border-t-dark/10">
+		<div className="p-3 grid grid-cols-5 items-center text-lg border-t border-t-dark/10 dark:border-t-light/10">
 			<div className="size-24 overflow-hidden rounded-md">
 				<img
 					src={image_url}

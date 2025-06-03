@@ -3,7 +3,7 @@ import { Link } from "react-router";
 const TopTipCard = ({ data }) => {
 	const { _id, image_url, title, category, difficulty, description } = data;
 	return (
-		<div className="border border-dark/10 bg-stone-50 rounded-3xl px-6 py-8 hover:shadow-lg hover:shadow-dark/10 transition-shadow duration-200 text-lg space-y-6">
+		<div className="border border-dark/10 dark:border-light/10 bg-stone-50 dark:bg-stone-800 rounded-3xl px-6 py-8 hover:shadow-lg hover:shadow-dark/10 transition-shadow duration-200 text-lg space-y-6">
 			<div className="space-y-4">
 				<img
 					src={image_url}
