@@ -2,6 +2,7 @@ import { NavLink } from "react-router";
 import Logo from "../assets/logo.png";
 import { useState } from "react";
 import useAuth from "../hooks/useAuth";
+import ToggleTheme from "../components/ToggleTheme";
 
 const Navbar = () => {
 	const [showMenu, setShowMenu] = useState(false);
@@ -194,6 +195,7 @@ const Navbar = () => {
 							Sign Up
 						</button>
 					</NavLink>
+					<ToggleTheme />
 				</div>
 			)}
 		</nav>

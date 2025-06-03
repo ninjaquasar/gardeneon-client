@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
 @import "tailwindcss";
-@import "../node_modules/preline/variants.css";
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @theme {
 	--font-mulish: "Mulish", Tahoma, Helvetica, sans-serif;

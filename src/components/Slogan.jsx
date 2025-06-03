@@ -12,6 +12,7 @@ const Slogan = () => {
 				cursor={true}
 				cursorBlinking={true}
 				cursorColor="var(--color-primary)"
+				loop={true}
 			></Typewriter>
 		</h2>
 	);
